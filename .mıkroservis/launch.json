@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "patient-service (Spring Boot :8081)",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["spring-boot:run"],
+      "cwd": "patient-service",
+      "port": 8081
+    },
+    {
+      "name": "appointment-service (Spark Java :8082)",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["exec:java", "-Dexec.mainClass=com.hospital.appointment.AppointmentService"],
+      "cwd": "appointment-service",
+      "port": 8082
+    },
+    {
+      "name": "doctor-service (Dropwizard :8083)",
+      "runtimeExecutable": "mvn",
+      "runtimeArgs": ["exec:java", "-Dexec.mainClass=com.hospital.doctor.DoctorApplication", "-Dexec.args=server src/main/resources/config.yml"],
+      "cwd": "doctor-service",
+      "port": 8083
+    },
+    {
+      "name": "all-services (Docker Compose :8081/:8082/:8083)",
+      "runtimeExecutable": "docker-compose",
+      "runtimeArgs": ["up", "--build"],
+      "cwd": ".",
+      "port": 8081
+    }
+  ]
+}

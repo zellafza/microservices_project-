@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  activity-log-service:
+    build: ./activity-log-service
+    container_name: activity-log-service
+    ports:
+      - "8085:8085"
+    networks:
+      - hospital-network
+    restart: unless-stopped
+
+  patient-service:
+    build: ./patient-service
+    container_name: patient-service
+    ports:
+      - "8081:8081"
+    networks:
+      - hospital-network
+    depends_on:
+      - activity-log-service
+    environment:
+      - LOG_SERVICE_URL=http://activity-log-service:8085
+    restart: unless-stopped
+
+  appointment-service:
+    build: ./appointment-service
+    container_name: appointment-service
+    ports:
+      - "8082:8082"
+    networks:
+      - hospital-network
+    depends_on:
+      - activity-log-service
+      - patient-service
+    environment:
+      - LOG_SERVICE_URL=http://activity-log-service:8085
+
+  doctor-service:
+    build: ./doctor-service
+    container_name: doctor-service
+    ports:
+      - "8083:8083"
+      - "8084:8084"
+    networks:
+      - hospital-network
+    depends_on:
+      - activity-log-service
+    environment:
+      - LOG_SERVICE_URL=http://activity-log-service:8085
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - hospital-network
+    depends_on:
+      - patient-service
+      - appointment-service
+      - doctor-service
+      - activity-log-service
+
+networks:
+  hospital-network:
+    driver: bridge

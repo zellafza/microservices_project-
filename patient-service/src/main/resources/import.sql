@@ -1,0 +1,10 @@
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Mehmet', 'Yilmaz', '12345678901', '0532 111 2233', 'mehmet.yilmaz@gmail.com', 45, 'A+');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Ayse', 'Kaya', '23456789012', '0533 222 3344', 'ayse.kaya@gmail.com', 32, 'B+');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Mustafa', 'Demir', '34567890123', '0534 333 4455', 'mustafa.demir@gmail.com', 58, 'O+');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Fatma', 'Sahin', '45678901234', '0535 444 5566', 'fatma.sahin@gmail.com', 27, 'AB+');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Ali', 'Arslan', '56789012345', '0536 555 6677', 'ali.arslan@gmail.com', 41, 'A-');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Zeynep', 'Ozturk', '67890123456', '0537 666 7788', 'zeynep.ozturk@gmail.com', 35, 'B-');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Hasan', 'Dogan', '78901234567', '0538 777 8899', 'hasan.dogan@gmail.com', 62, 'O-');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Elif', 'Aydin', '89012345678', '0539 888 9900', 'elif.aydin@gmail.com', 29, 'A+');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Ibrahim', 'Polat', '90123456789', '0541 999 0011', 'ibrahim.polat@gmail.com', 50, 'AB-');
+INSERT INTO patients (name, surname, tc_no, phone, email, age, blood_type) VALUES ('Hatice', 'Gunes', '11234567890', '0542 000 1122', 'hatice.gunes@gmail.com', 38, 'O+');
